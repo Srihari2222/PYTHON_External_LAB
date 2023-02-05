@@ -9,10 +9,9 @@ d=0
 if len(y)%2!=0 or x<0:
     print("Invalid number")
 else:
-    for i in y[::2]:
-        c=c+int(i)
-    for j in y[1::2]:
-        d=d+int(j)
+    for i in range(len(y)):
+        if i%2==0:c+=int(y[i])
+        else:d+=int(y[i])
     print(f"Difference between the sums of the digits occurring in the alternate positions: {abs(c-d)}")
 
 # Sample input & output 1:

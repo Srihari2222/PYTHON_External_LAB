@@ -7,18 +7,19 @@
 # types in a non-integer string. In the except clause, print a message to the
 # user saying they must enter an integer.
 def collatz(num):
-    while (num != 1):
-        if num % 2 == 0:
-            num = num // 2
-            print(num, end=' ')
-        elif num % 2 != 0:
-            num = num * 3 + 1
-            print(num, end=' ')
+    if num % 2 == 0:
+        num = num // 2
+        print(num, end=' ')
+    elif num % 2 != 0:
+        num = num * 3 + 1
+        print(num, end=' ')
+    return num
 
 
 try:
     num = int(input("Enter a number: "))
-    collatz(num)
+    while(num!=1):
+        num=collatz(num)
 except:
     print("Please enter a valid INTEGER")
 

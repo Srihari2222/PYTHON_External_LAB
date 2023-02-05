@@ -2,8 +2,8 @@
 n = int(input())
 lst=[]
 for i in range(n):
-    i=int(input())
-    lst.append(i)
+    a=int(input())
+    lst.append(a)
 print(lst)
 new_lst = [(i,i**3) for i in lst]
 print(new_lst)
