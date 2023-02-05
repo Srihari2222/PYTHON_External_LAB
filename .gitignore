@@ -1,2 +1,8 @@
 main.py
 .idea
+static 
+templates
+venv
+input.txt
+output.txt
+SET_8.py

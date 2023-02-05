@@ -5,7 +5,7 @@ with open("bin.txt", 'r') as f:
 f.close()
 print("Reverse order:")
 for i in reversed(F_lst):
-    print(i.rstrip())
+    print(i.strip('\n'))
 print(f"Number of lines: {len(F_lst)}")
 c = 0
 k = 0

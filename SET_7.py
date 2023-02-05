@@ -6,23 +6,27 @@
 
 import re
 
-with open("input.txt", 'r') as f, open("output.txt", 'r+') as fp:
-    mlst = []
-    plst = []
-    for line in f:
-        mtemp = re.findall('\S+@\S+', line)
-        ptemp = re.findall('(\+91\-[98765]{1}[0-9]{9})', line)
-        mlst.extend(mtemp)
-        plst.extend(ptemp)
-print("Mail IDs:")
-for i in mlst:
-    print(i)
-print("\nPhone Numbers:")
-for i in plst:
-    print(i)
-print("\n")
-print(f"{len(mlst)} emails collected!")
-print(f"{len(plst)} phone numbers collected")
+def Email(email):
+    return re.match("\S+@\S+",email)
+
+def phone(ph):
+    return re.match("(\+91\-[98765]{1}[0-9]{9})",ph)
+listEmail=[]
+listPh=[]
+with open("input.txt",'r') as fr,open("output.txt",'w') as fw:
+    for line in fr:
+        words=line.split()
+        for word in words:
+            if Email(word):listEmail.append(word)
+            elif phone(word):listPh.append(word)
+    fw.write("\n")
+    fw.write("Mail IDs:\n")
+    for i in listEmail:fw.write(i+"\n")
+    fw.write("\n")
+    fw.write("Phone Numbers:\n")
+    for i in listPh:fw.write(i+"\n")
+print(f"{len(listEmail)} emails collected!")
+print(f"{len(listPh)} phone numbers collected!")
 
 #
 # sample input file:
