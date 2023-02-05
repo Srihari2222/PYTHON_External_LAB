@@ -9,10 +9,8 @@
 def collatz(num):
     if num % 2 == 0:
         num = num // 2
-        print(num, end=' ')
     elif num % 2 != 0:
         num = num * 3 + 1
-        print(num, end=' ')
     return num
 
 
@@ -20,6 +18,7 @@ try:
     num = int(input("Enter a number: "))
     while(num!=1):
         num=collatz(num)
+        print(num,end=' ')
 except:
     print("Please enter a valid INTEGER")
 
