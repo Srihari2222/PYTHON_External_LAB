@@ -4,8 +4,12 @@
 class Robot:
     def __init__(self,name):
         self.name=name
-a=Robot(input())
-print("Robot says hello to ",a.name)
+    def greet(self):
+        print(f"Robot says hello to {self.name}")
+
+
+robot = Robot(input())
+robot.greet()
 
 # sample input1=sudheer
 # sample output1=Robot says hello to sudheer.
