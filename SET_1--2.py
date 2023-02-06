@@ -3,26 +3,23 @@
 #           1 (ii). ATM (to deposit and withdraw amount from ATM machine)
 class ATM:
     def __init__(self):
-        self.amount = 50000
+        self.balance=50000
 
-    def w(self):
-        withdraw = int(input("Enter the amount to withdraw: "))
-        if self.amount < withdraw:
-            print(f"Insufficient balance")
+    def withdraw(self,amount):
+        if self.balance<amount:
+            print(f"Insufficient Balance")
         else:
-            self.amount = self.amount - withdraw
-            print(f"Remaining balance: {self.amount}")
-
-    def d(self):
-        deposit = int(input("Enter the amount to deposit: "))
-        self.amount = self.amount + deposit
-        print(f"Updated balance: {self.amount}")
+            self.balance-=amount
+            print(f"Remaining balance : {self.balance}")
+    def deposit(self,amount):
+        self.balance+=amount
+        return self.balance
 
 
-atm = ATM()
-atm.w()
-atm.d()
-
+atm=ATM()
+atm.withdraw(int(input("Enter the amount to withdraw:")))
+bal = atm.deposit(int(input("Enter the amount to deposit: ")))
+print(f"Updated Balance {bal}")
 # Sample input1 & output1:
 #
 # Enter the amount to withdraw: 9500
